@@ -5,3 +5,116 @@
     Date: 10-01-2025
     Description: This is my general style sheet.  Styles that affect all pages should go here.
 */
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #343a40;
+    padding: 1rem 0;
+}
+
+header .nav-link {
+    color: #f8f9fa !important;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+header .nav-link.active {
+    color: #ffc107 !important;
+    font-weight: bold;
+}
+
+/* Table styling */
+table {
+    margin-top: 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+table td {
+    padding: 1rem;
+    color: #212529;
+    font-size: 1rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Zebra stripe rows */
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Action button styling */
+button.btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+}
+
+button.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+}
+
+button.btn-danger:hover {
+    background-color: #bd2130;
+}
+
+/* Empty message styling */
+.alert {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e0a800;
+    text-decoration: underline;
+}
