@@ -2,11 +2,16 @@
   "name": "inft2202",
   "version": "1.0.0",
   "main": "index.js",
+  "type":"module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint \"app/**/*.js\""
   },
   "author": "Gratis Jacob",
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.18.0"
+  }
 }
