@@ -11,3 +11,4 @@ If there are no pinned movies, show a message that says there are no pinned movi
 There should be a button that adds and removes movies from your pinned list.
 # test1
 # inft2202.test1
+# inft2202
