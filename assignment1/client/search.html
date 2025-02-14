@@ -20,7 +20,7 @@
         </nav>
     </header>
     
-    <div class="container my-5">
+    <main class="container my-5"> <!-- Added main element here -->
         <h1 class="text-center mb-4">Product List</h1>
         <table class="table table-bordered">
             <thead>
@@ -33,24 +33,37 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody id="product-table-body"> <!-- Add this line -->
-                <!-- Product rows will be inserted here -->
+            <tbody id="product-table-body"> <!-- Product rows will be inserted here -->
+                <!-- Product rows will be populated by JavaScript -->
             </tbody>
         </table>
-    </div>
+    </main>
 
-      <!-- Pagination -->
-      <nav aria-label="Page navigation example">
+    <!-- Pagination -->
+    <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center" id="pagination">
             <!-- Pagination items will be inserted here -->
         </ul>
     </nav>
-</div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/products/search.js"></script>
+    <script type="module">
+        import listBuilder from "./app/products/search.js";
+
+        let params = new URL(document.location).searchParams;
+        let recordPage = {
+          page: Number(params.get('page') ?? 1),
+          perPage: Number(params.get('perPage') ?? 7)
+        };
+
+        const list = listBuilder(recordPage); // Assuming this will return the correct list with pagination info
+
+        // Assuming list.element contains the HTML for the product list
+        let productTableBody = document.querySelector('#product-table-body');
+        productTableBody.innerHTML = list.element;
+
+        // Assuming list.pagination contains the pagination HTML
+        let paginationContainer = document.querySelector('#pagination');
+        paginationContainer.innerHTML = list.pagination;
+    </script>  
 </body>
 </html>
