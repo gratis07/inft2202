@@ -1,0 +1,41 @@
+<main class="container">
+    <!-- Page Title -->
+    <h2 class="text-center my-5 text-primary fw-bold">Our Exclusive Product List</h2>
+
+    <!-- Filters and Spinner -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center gap-3">
+            <label for="perPage" class="form-label mb-0">Items per page:</label>
+            <select id="perPage" class="form-select w-auto">
+                <option value="5">5 per page</option>
+                <option value="10">10 per page</option>
+                <option value="15">15 per page</option>
+            </select>
+        </div>
+        <div id="spinner" class="spinner-border text-primary" role="status" style="display: none;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Message Box -->
+    <div id="message-box" class="alert alert-info text-center" role="alert" style="display: none;">
+        Loading products...
+    </div>
+
+    <!-- Product Grid -->
+    <div id="product-list" class="row g-4">
+        <!-- Product Items will be dynamically loaded here -->
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation example" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" id="prev-page">Previous</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" id="next-page">Next</a>
+            </li>
+        </ul>
+    </nav>
+</main>

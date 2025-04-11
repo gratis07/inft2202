@@ -1,0 +1,167 @@
+/* Variables */
+$bg-color: rgba(0, 0, 0, 0.7);
+$highlight-color: #007bff;
+$white: #ffffff;
+$text-color-secondary: rgba(255, 255, 255, 0.7);
+$max-width: 1200px; // Set the maximum width for the content
+$font-family: 'Arial', sans-serif;
+$font-size-base: 16px;
+$transition-speed: 0.3s;
+
+/* General Styles */
+body {
+  background-color: #1a1a1a; // Fallback for no background image
+  color: $white;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center; // Center the content horizontally
+}
+
+/* Container to limit the width */
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: $bg-color;
+  padding: 15px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $max-width;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+header a {
+  color: $white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color $transition-speed ease;
+
+  &:hover {
+    color: $highlight-color;
+  }
+}
+
+header .nav-pills {
+  display: flex;
+  gap: 15px;
+
+  .nav-link {
+    color: $white;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color $transition-speed ease, transform $transition-speed ease;
+
+    &.active {
+      background-color: $highlight-color;
+      transform: scale(1.1);
+    }
+
+    &:hover {
+      background-color: rgba($highlight-color, 0.7);
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Main Styles */
+main {
+  flex: 1;
+  padding: 30px;
+  background-color: $bg-color;
+  border-radius: 12px;
+  margin: 30px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: $max-width;
+  width: 100%;
+  backdrop-filter: blur(10px); // Adds a subtle blur effect
+}
+
+main h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+  color: $highlight-color;
+  border-bottom: 3px solid $highlight-color;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+main .card {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: transform $transition-speed ease, box-shadow $transition-speed ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+main .card-title {
+  color: $highlight-color;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+main .card-text {
+  color: $text-color-secondary;
+}
+
+/* Footer Styles */
+footer {
+  background-color: $bg-color;
+  padding: 15px 20px;
+  color: $white;
+  text-align: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  max-width: $max-width;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+footer .nav-footer {
+  display: flex;
+  gap: 15px;
+
+  .nav-link {
+    color: $white;
+    transition: color $transition-speed ease;
+
+    &:hover {
+      color: $highlight-color;
+    }
+  }
+}
+
+footer .text-body-secondary {
+  color: $text-color-secondary;
+
+  &:hover {
+    color: $white;
+  }
+}
